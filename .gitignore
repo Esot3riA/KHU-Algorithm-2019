@@ -1,0 +1,6 @@
+# python environment files
+/venv
+/__pycache__
+
+# pycharm resource
+/.idea
