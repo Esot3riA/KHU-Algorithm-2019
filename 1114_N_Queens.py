@@ -11,13 +11,13 @@ def promising(i, col):
 def queens(n, i, col):
     if promising(i, col):
         if i == n-1:
-            return col
+            print(col)
         else:
             for j in range(0, n):
                 col[i+1] = j
-                return queens(n, i+1, col)
+                queens(n, i+1, col)
 
 
 n = 5
 col = n * [0]
-print(queens(n, -1, col))
+queens(n, -1, col)

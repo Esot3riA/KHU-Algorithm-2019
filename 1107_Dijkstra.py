@@ -47,6 +47,7 @@ for iterator in range(1, n):
     for i in range(1, n):
         if 0 < w[vnear][i] < inf:
             NoC += 1
+            # 여기 중요
             if length[vnear] + w[vnear][i] < length[i]:
                 length[i] = length[vnear] + w[vnear][i]
                 touch[i] = vnear

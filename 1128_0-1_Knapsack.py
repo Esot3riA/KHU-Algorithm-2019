@@ -8,7 +8,21 @@ bestset = [0] * len(p)
 
 # 맨 처음 정렬하는 부분이 빠져 있음
 def promising(i, weight, profit):
-    print('hello, world')
+    global maxp
+    if weight >= W:
+        return False
+    else:
+        j = i + 1
+        bound = profit
+        totweight = weight
+        while j <= n-1 and totweight + w[j] <= W:
+            totweight += w[j]
+            bound += p[j]
+            j += 1
+        k = j
+        if k <= n-1:
+            bound += (W - totweight) * p[k]/w[k]
+        return bound > maxp
 
 
 def knapsack(i, profit, weight):
